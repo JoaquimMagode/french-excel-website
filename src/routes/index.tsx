@@ -244,17 +244,26 @@ function Index() {
         TEF Canada
       </Link>
 
-      <span className="font-serif text-lg text-muted-foreground">
+      <Link
+        to="/tcf-canada"
+        className="font-serif text-lg text-muted-foreground transition-colors hover:text-foreground"
+      >
         TCF Canada
-      </span>
+      </Link>
 
-      <span className="font-serif text-lg text-muted-foreground">
+      <Link
+        to="/tcf-tout-public"
+        className="font-serif text-lg text-muted-foreground transition-colors hover:text-foreground"
+      >
         TCF Tout Public
-      </span>
+      </Link>
 
-      <span className="font-serif text-lg text-muted-foreground">
+      <Link
+        to="/delf-dalf"
+        className="font-serif text-lg text-muted-foreground transition-colors hover:text-foreground"
+      >
         DELF / DALF
-      </span>
+      </Link>
     </div>
   </div>
 </section>

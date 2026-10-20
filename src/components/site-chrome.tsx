@@ -94,9 +94,29 @@ export function SiteFooter() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-foreground">Exams</p>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-              <li>TEF Canada</li>
-              <li>TCF Tout Public</li>
-              <li>DELF / DALF</li>
+              <li>
+                <a href="/tef-canada" className="text-muted-foreground hover:text-primary">
+                  TEF Canada
+                </a>
+              </li>
+              <li>
+                <a href="/tcf-canada" className="text-muted-foreground hover:text-primary">
+                  TCF Canada
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/tcf-tout-public"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  TCF Tout Public
+                </a>
+              </li>
+              <li>
+                <a href="/delf-dalf" className="text-muted-foreground hover:text-primary">
+                  DELF / DALF
+                </a>
+              </li>
             </ul>
           </div>
           <div>

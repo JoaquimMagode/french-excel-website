@@ -116,7 +116,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           email: "bonjour@frenchexcel.org",
           description:
             "Online French classes and TEF, TCF, DELF and DALF exam preparation with native French teachers.",
-          sameAs: [],
+          // TODO: Replace these placeholder profile URLs with French Excel's real social media profiles.
+          sameAs: [
+            "https://www.linkedin.com/company/frenchexcel",
+            "https://www.facebook.com/frenchexcel",
+            "https://www.instagram.com/frenchexcel",
+          ],
           knowsLanguage: ["fr", "en"],
           areaServed: {
             "@type": "GeoShape",

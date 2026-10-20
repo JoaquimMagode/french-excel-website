@@ -10,6 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DelfDalfRouteImport } from './routes/delf-dalf'
+import { Route as TcfCanadaRouteImport } from './routes/tcf-canada'
+import { Route as TcfToutPublicRouteImport } from './routes/tcf-tout-public'
 import { Route as TefCanadaRouteImport } from './routes/tef-canada'
 import { Route as ThankYouRouteImport } from './routes/thank-you'
 import { Route as ApiContactRouteImport } from './routes/api.contact'
@@ -17,6 +20,21 @@ import { Route as ApiContactRouteImport } from './routes/api.contact'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DelfDalfRoute = DelfDalfRouteImport.update({
+  id: '/delf-dalf',
+  path: '/delf-dalf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TcfCanadaRoute = TcfCanadaRouteImport.update({
+  id: '/tcf-canada',
+  path: '/tcf-canada',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TcfToutPublicRoute = TcfToutPublicRouteImport.update({
+  id: '/tcf-tout-public',
+  path: '/tcf-tout-public',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TefCanadaRoute = TefCanadaRouteImport.update({
@@ -37,12 +55,18 @@ const ApiContactRoute = ApiContactRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/delf-dalf': typeof DelfDalfRoute
+  '/tcf-canada': typeof TcfCanadaRoute
+  '/tcf-tout-public': typeof TcfToutPublicRoute
   '/tef-canada': typeof TefCanadaRoute
   '/thank-you': typeof ThankYouRoute
   '/api/contact': typeof ApiContactRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/delf-dalf': typeof DelfDalfRoute
+  '/tcf-canada': typeof TcfCanadaRoute
+  '/tcf-tout-public': typeof TcfToutPublicRoute
   '/tef-canada': typeof TefCanadaRoute
   '/thank-you': typeof ThankYouRoute
   '/api/contact': typeof ApiContactRoute
@@ -50,20 +74,48 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/delf-dalf': typeof DelfDalfRoute
+  '/tcf-canada': typeof TcfCanadaRoute
+  '/tcf-tout-public': typeof TcfToutPublicRoute
   '/tef-canada': typeof TefCanadaRoute
   '/thank-you': typeof ThankYouRoute
   '/api/contact': typeof ApiContactRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/tef-canada' | '/thank-you' | '/api/contact'
+  fullPaths:
+    | '/'
+    | '/delf-dalf'
+    | '/tcf-canada'
+    | '/tcf-tout-public'
+    | '/tef-canada'
+    | '/thank-you'
+    | '/api/contact'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/tef-canada' | '/thank-you' | '/api/contact'
-  id: '__root__' | '/' | '/tef-canada' | '/thank-you' | '/api/contact'
+  to:
+    | '/'
+    | '/delf-dalf'
+    | '/tcf-canada'
+    | '/tcf-tout-public'
+    | '/tef-canada'
+    | '/thank-you'
+    | '/api/contact'
+  id:
+    | '__root__'
+    | '/'
+    | '/delf-dalf'
+    | '/tcf-canada'
+    | '/tcf-tout-public'
+    | '/tef-canada'
+    | '/thank-you'
+    | '/api/contact'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DelfDalfRoute: typeof DelfDalfRoute
+  TcfCanadaRoute: typeof TcfCanadaRoute
+  TcfToutPublicRoute: typeof TcfToutPublicRoute
   TefCanadaRoute: typeof TefCanadaRoute
   ThankYouRoute: typeof ThankYouRoute
   ApiContactRoute: typeof ApiContactRoute
@@ -76,6 +128,27 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/delf-dalf': {
+      id: '/delf-dalf'
+      path: '/delf-dalf'
+      fullPath: '/delf-dalf'
+      preLoaderRoute: typeof DelfDalfRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tcf-canada': {
+      id: '/tcf-canada'
+      path: '/tcf-canada'
+      fullPath: '/tcf-canada'
+      preLoaderRoute: typeof TcfCanadaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tcf-tout-public': {
+      id: '/tcf-tout-public'
+      path: '/tcf-tout-public'
+      fullPath: '/tcf-tout-public'
+      preLoaderRoute: typeof TcfToutPublicRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/tef-canada': {
@@ -104,6 +177,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DelfDalfRoute: DelfDalfRoute,
+  TcfCanadaRoute: TcfCanadaRoute,
+  TcfToutPublicRoute: TcfToutPublicRoute,
   TefCanadaRoute: TefCanadaRoute,
   ThankYouRoute: ThankYouRoute,
   ApiContactRoute: ApiContactRoute,
